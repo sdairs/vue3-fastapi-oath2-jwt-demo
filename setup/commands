@@ -1,0 +1,41 @@
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+# Install NODE 16.4.0
+nvm install 16.4.0
+# Install Yarnpkg
+npm install --global yarn
+
+# Install pip
+apt install python3-pip
+# Install Poetry
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+# Reload env
+source $HOME/.poetry/env
+
+# Lanuch uvicorn dev server
+uvicorn main:app --reload --host 0.0.0.0 --port 8080
+
+
+# Lanuch parcel test server
+yarn run start
+
+
+# Set up cockroachDB https://www.cockroachlabs.com/docs/v21.1/start-a-local-cluster
+mkdir ~/crdb
+cd crdb/
+curl https://binaries.cockroachdb.com/cockroach-v21.1.5.linux-amd64.tgz | tar -xz && sudo cp -i cockroach-v21.1.5.linux-amd64/cockroach /usr/local/bin/
+mkdir -p /usr/local/lib/cockroach
+sudo mkdir -p /usr/local/lib/cockroach
+sudo cp -i cockroach-v21.1.5.linux-amd64/lib/libgeos.so /usr/local/lib/cockroach/
+sudo cp -i cockroach-v21.1.5.linux-amd64/lib/libgeos_c.so /usr/local/lib/cockroach/
+
+cockroach start \
+--insecure \
+--store=node1 \
+--listen-addr=localhost:26257 \
+--http-addr=localhost:8082 \
+--join=localhost:26257 \
+--background
+
+cockroach init --insecure --host=localhost:26257
+cockroach sql --insecure --host=localhost:26257
