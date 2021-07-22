@@ -42,6 +42,7 @@ The database used is CockroachDB, which is a PostgreSQL compatible distributed d
 If you aren't familiar with CockroachDB, just pretend it's Postgres.
 
 One database/table exists in the database, `users.users` with 1 existing user entry.
+
 Username: `user1`
 Password: `password`
 
