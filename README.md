@@ -47,7 +47,7 @@ Username: `user1`
 Password: `password`
 
 Passwords are stored as STRING representations of an Argon2 hash. 
-See [https://passlib.readthedocs.io/en/stable/lib/passlib.hash.argon2.html](this page) for details on Argon2 hashes.
+See [this page](https://passlib.readthedocs.io/en/stable/lib/passlib.hash.argon2.html) for details on Argon2 hashes.
 
 # Setup
 Some example commands are provided in the `setup` directory `commands` file.
