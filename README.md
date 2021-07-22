@@ -6,6 +6,8 @@ The project consists of:
 - A frontend UI built using Vue.js
 - A database using CockroachDB
 
+It is not perfect and certainly not production ready, but should provide a starting point for understanding how the components interact.
+
 ## Backend API
 The backend is a REST API built in Python and using FastAPI.
 
@@ -52,3 +54,6 @@ See [this page](https://passlib.readthedocs.io/en/stable/lib/passlib.hash.argon2
 # Setup
 Some example commands are provided in the `setup` directory `commands` file.
 This is not a script to be executed as is, it's just a dump of commands you might use to set your environment up.
+
+# Contributing
+Please feel free to submit PRs if you feel you can improve the demo.
