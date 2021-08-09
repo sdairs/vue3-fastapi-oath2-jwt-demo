@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import { createStore } from 'vuex';
 import ElementPlus from 'element-plus';
+import 'element-plus/lib/theme-chalk/index.css';
 import { auth } from "./helper/auth";
 
 import App from './App.vue';

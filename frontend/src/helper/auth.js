@@ -12,12 +12,10 @@ export const auth = {
     login({ commit }, user) {
       return login(user).then(
         user => {
-          console.log('login success');
 	  commit('loginSuccess', user);
           return Promise.resolve(user);
         },
         error => {
-	  console.log('login failre');
           commit('loginFailure');
           return Promise.reject(error);
         }
@@ -64,7 +62,10 @@ export const auth = {
 
 async function login(user) {
   await postApi("token", user)
-    .then((response) => response.json())
+    .then((response) => {
+	    if (response.status == 200)  return response.json()
+	    else throw 'Login Failure 401'
+    })
     .then((data) => {
       if (data.access_token) {
         localStorage.setItem('user', JSON.stringify(data));

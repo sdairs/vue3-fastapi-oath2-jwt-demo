@@ -1,6 +1,6 @@
 <template>
-  <el-row>
-    <el-col :span="24">
+  <el-row justify="center">
+    <el-col :span="6">
       <Login v-if="!isLoggedIn()" />
       <UserAccount v-if="isLoggedIn()" />
     </el-col>
