@@ -31,5 +31,5 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
-class TokenData(BaseModel):
+class TokenData(Token):
     username: Optional[str] = None
