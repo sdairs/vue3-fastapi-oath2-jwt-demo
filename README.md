@@ -1,5 +1,5 @@
 # vue3-fastapi-oath2-jwt-demo
-This is a Demo project to show how to do OAth2 token auth with FastAPI to Vue3 frontend with JWT (with Postgres)
+This is a Demo project to show how to do OAuth2 token auth with FastAPI to Vue3 frontend with JWT (with Postgres)
 
 The project consists of:
 - A backend API built using Python & FastAPI
@@ -26,7 +26,7 @@ You can run the backend using the uvicorn auto-reloading dev server, make sure y
 
 `~/vue3-fastapi-oath2-jwt-demo/backend $ uvicorn main:app --reload --port 8080` 
 
-This command would server your backend on `http://localhost:8080`.
+This command would serve your backend on `http://localhost:8080`.
 You can add `--host 0.0.0.0` if you want to serve it on your network.
 
 ## Frontend UI
