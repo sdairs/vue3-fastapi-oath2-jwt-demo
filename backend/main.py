@@ -30,7 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-CONNECTION_STRING = build_sqla_connection_string("postgres://useradmin:useradmin@localhost:26257/users")
+CONNECTION_STRING = build_sqla_connection_string("postgresql://root:root@localhost:26257/users")
 
 database = DatabaseLayer(CONNECTION_STRING)
 test_connection(database.engine)
